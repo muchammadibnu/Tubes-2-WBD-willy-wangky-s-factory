@@ -1,12 +1,12 @@
-// nomor 2
+// nomor 3
 import React, { Component } from 'react'
-    
-class MelihatResep extends Component {
+
+class MelihatDaftarCoklat extends Component {
     constructor(props){
         super(props);
         this.state = {
-            resep: "",
-            isLoaded: false
+            coklat:"",
+            isLoaded:false
         }
     }
 
@@ -14,9 +14,9 @@ class MelihatResep extends Component {
         var SoaMessage = `<?xml version='1.0' encoding='UTF-8'?>
                         <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
                             <S:Body>
-                                <ns2:getListRecipe xmlns:ns2="http://codejava.net/">
+                                <ns2:getListChocolateInFactory xmlns:ns2="http://codejava.net/">
                                    
-                                </ns2:getListRecipe>
+                                </ns2:getListChocolateInFactory>
                             </S:Body>
                         </S:Envelope>`;
 
@@ -32,7 +32,7 @@ class MelihatResep extends Component {
                 res = res.getElementsByTagName("return")[0].childNodes[0].data;
                    
                 this.setState({
-                    resep: res,
+                    coklat: res,
                     isLoaded: true
                 })
             }
@@ -44,11 +44,11 @@ class MelihatResep extends Component {
     }
 
     render(){
-        var { resep, isLoaded } = this.state
+        var { coklat, isLoaded } = this.state
         if (!isLoaded){
             return  (
                 <div>
-                    <h2>List Resep</h2>
+                    <h2>List Coklat</h2>
                     <p>loading...</p>
                 </div>
             );
@@ -56,8 +56,8 @@ class MelihatResep extends Component {
         else{
             return (
                 <div>
-                    <h2>List Resep</h2>
-                    <div className="content" dangerouslySetInnerHTML={{__html: resep}}></div>
+                    <h2>List Coklat</h2>
+                    <div className="content" dangerouslySetInnerHTML={{__html: coklat}}></div>
                 </div>
             );
         }
@@ -65,4 +65,4 @@ class MelihatResep extends Component {
     }
 }
 
-export default MelihatResep
+export default MelihatDaftarCoklat
