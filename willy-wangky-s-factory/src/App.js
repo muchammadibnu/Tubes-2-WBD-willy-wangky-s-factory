@@ -7,16 +7,19 @@ import MelihatBahanPabrik from './components/melihatBahanPabrik.jsx';
 import MelihatDaftarCoklat from './components/melihatDaftarCoklat.jsx';
 import MelihatPemesanan from './components/melihatPemesanan.jsx';
 import MelihatSaldo from './components/melihatSaldo.jsx';
+import Navbar from './components/navbar'
+import Home from './components/home'
 //import MembeliBahanSupplier from '.components/membeliBahanSupplier.jsx';
 
 class App extends Component {
     render() {
       return (
       <BrowserRouter>
+        <Navbar />
         <div className="App">
           <Switch>
             <Route exact path="/">
-              <MelihatResep />
+              <Home />
             </Route>
             <Route path="/MelihatResep">
               <MelihatResep />
