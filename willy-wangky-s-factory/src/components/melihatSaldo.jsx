@@ -15,7 +15,7 @@ class MelihatSaldo extends Component {
             <S:Body>
                 <ns2:getSaldo xmlns:ns2="http://codejava.net/">
                    
-                </ns2:getSaldo()>
+                </ns2:getSaldo>
             </S:Body>
         </S:Envelope>`;
 
